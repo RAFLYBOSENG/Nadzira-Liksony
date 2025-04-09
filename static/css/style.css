@@ -174,30 +174,41 @@ h1 {
 
 /* Button Styles */
 .btn-theme {
-    right: 15px;
-    bottom: 45px;
     position: fixed;
+    right: var(--spacing-lg);
+    bottom: calc(var(--spacing-lg) + 60px);
     z-index: 1055;
-    background-color: var(--gold) !important;
-    color: var(--white) !important;
-    border-color: var(--gold-dark) !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gold);
+    color: var(--white);
+    border-color: var(--gold-dark);
+    box-shadow: var(--box-shadow);
 }
 
 .btn-music {
     position: fixed;
-    bottom: 0px;
-    right: 0px;
-    width: 50px;
-    height: 50px;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 6px rgba(212, 175, 55, 0.2);
-    background-color: var(--gold) !important;
-    color: var(--white) !important;
-    border-color: var(--gold-dark) !important;
+    z-index: 1055;
+    box-shadow: var(--box-shadow);
+    background-color: var(--gold);
+    color: var(--white);
+    transition: transform var(--transition-speed) ease;
+}
+
+.btn-music:hover {
+    transform: translateY(-5px);
 }
 
 .spin-button {
@@ -743,7 +754,7 @@ footer a {
 .scroll-top {
     position: fixed;
     bottom: var(--spacing-lg);
-    right: var(--spacing-lg);
+    left: var(--spacing-lg);
     background: var(--gold-gradient);
     color: var(--white);
     width: 40px;
@@ -771,7 +782,7 @@ footer a {
 @media (max-width: 576px) {
     .scroll-top {
         bottom: var(--spacing-md);
-        right: var(--spacing-md);
+        left: var(--spacing-md);
     }
 }
 
@@ -1034,4 +1045,20 @@ footer a {
 .section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+    .btn-theme {
+        right: var(--spacing-md);
+        bottom: calc(var(--spacing-md) + 55px);
+        width: 40px;
+        height: 40px;
+    }
+    
+    .btn-music {
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+        width: 40px;
+        height: 40px;
+    }
 }
