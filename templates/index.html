@@ -1063,29 +1063,34 @@
       </div>
     </footer>
 
-    <!-- Theme Button -->
-    <button
-      type="button"
-      id="button-theme"
-      style="display: none"
-      class="btn bg-dark border border-2 btn-sm rounded-circle btn-theme"
-      onclick="theme.change()"
-    >
-      <i class="fa-solid fa-circle-half-stroke"></i>
-    </button>
-
-    <!-- Audio Button -->
+    <!-- Music Button -->
     <button
       type="button"
       id="button-music"
-      style="display: none"
-      class="btn bg-dark border border-2 btn-sm rounded-circle btn-music"
-      onclick="audio.button(this)"
+      class="btn-music"
+      onclick="toggleMusic()"
       data-status="true"
       data-url="{{ url_for('static', filename='assets/music/sound.mp3') }}"
     >
-      <i class="fa-solid fa-circle-pause spin-button"></i>
+      <span class="vinyl-grooves"></span>
+      <span class="vinyl-label"></span>
+      <span class="vinyl-reflection"></span>
     </button>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Load and initialize AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
 
     <!-- Modal Image -->
     <div class="modal fade" id="modal-image" tabindex="-1" aria-hidden="true">
@@ -1172,8 +1177,8 @@
             mainContent.style.opacity = '1';
           }, 100);
 
-          // Tampilkan dan mainkan musik
-          buttonMusic.style.display = 'block';
+          // Tampilkan tombol musik
+          buttonMusic.style.display = 'flex';
           playMusic();
         }, 500);
 
@@ -1204,7 +1209,7 @@
       };
 
       const toggleMusic = () => {
-        if (!audio) return;
+        if (!audio) initMusic();
         if (audio.paused) {
           audio.play();
           document.querySelector('#button-music i').classList.add('spin-button');
@@ -1224,7 +1229,7 @@
 
         // Inisialisasi musik
         initMusic();
-
+        
         // Set nama tamu
         const urlParams = new URLSearchParams(window.location.search);
         const guestName = urlParams.get('to') || 'Tamu Undangan';
@@ -1232,9 +1237,6 @@
           <p class="mt-0 mb-1">Kepada Yth:</p>
           <h2 class="font-esthetic my-0">${guestName}</h2>
         `;
-
-        // Event listener untuk tombol musik
-        document.getElementById('button-music').addEventListener('click', toggleMusic);
       });
     </script>
   </body>

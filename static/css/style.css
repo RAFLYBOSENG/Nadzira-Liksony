@@ -174,42 +174,178 @@ h1 {
 
 /* Button Styles */
 .btn-theme {
-    right: 15px;
-    bottom: 45px;
     position: fixed;
+    right: var(--spacing-lg);
+    bottom: calc(var(--spacing-lg) + 60px);
     z-index: 1055;
-    background-color: var(--gold) !important;
-    color: var(--white) !important;
-    border-color: var(--gold-dark) !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gold);
+    color: var(--white);
+    border-color: var(--gold-dark);
+    box-shadow: var(--box-shadow);
 }
 
 .btn-music {
     position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 6px rgba(212, 175, 55, 0.2);
-    background-color: var(--gold) !important;
-    color: var(--white) !important;
-    border-color: var(--gold-dark) !important;
+    z-index: 1055;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+    background: #2A2A2A;
+    border: 2px solid var(--gold);
+    transition: all var(--transition-speed) ease;
+    overflow: hidden;
+    animation: pulse 2s infinite alternate;
 }
 
-.spin-button {
-    animation: spin 2s linear infinite;
+.btn-music::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: var(--white);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    box-shadow: 0 0 8px 2px rgba(212, 175, 55, 0.6);
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
+.btn-music::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    background: var(--gold);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.vinyl-grooves {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: repeating-radial-gradient(
+        circle at center,
+        #333333 0px,
+        #333333 1px,
+        #444444 1px,
+        #444444 2px,
+        #333333 2px,
+        #333333 3px,
+        #444444 3px,
+        #444444 4px
+    );
+    z-index: 1;
+}
+
+.vinyl-label {
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, var(--gold) 0%, var(--gold-dark) 100%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;
+}
+
+.vinyl-label::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    top: 50%;
+    left: 10%;
+}
+
+.vinyl-label::before {
+    content: '';
+    position: absolute;
+    height: 80%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    left: 50%;
+    top: 10%;
+}
+
+.vinyl-reflection {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.2) 0%, 
+        rgba(255, 255, 255, 0) 100%);
+    border-radius: 65px 65px 0 0;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.btn-music:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.7);
+    animation-play-state: paused;
+}
+
+.btn-music:hover .vinyl-grooves {
+    opacity: 1;
+}
+
+.spin-button, 
+.spin-button .vinyl-grooves {
+    animation: vinylSpin 8s linear infinite;
+}
+
+@keyframes vinylSpin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
     }
-    to {
-        transform: rotate(360deg);
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.spin-button::before {
+    animation: centerPulse 2s infinite alternate;
+}
+
+@keyframes centerPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 5px 2px rgba(212, 175, 55, 0.2);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        box-shadow: 0 0 8px 4px rgba(212, 175, 55, 0.6);
     }
 }
 
@@ -743,7 +879,7 @@ footer a {
 .scroll-top {
     position: fixed;
     bottom: var(--spacing-lg);
-    right: var(--spacing-lg);
+    left: var(--spacing-lg);
     background: var(--gold-gradient);
     color: var(--white);
     width: 40px;
@@ -771,7 +907,7 @@ footer a {
 @media (max-width: 576px) {
     .scroll-top {
         bottom: var(--spacing-md);
-        right: var(--spacing-md);
+        left: var(--spacing-md);
     }
 }
 
@@ -1034,4 +1170,59 @@ footer a {
 .section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+    .btn-theme {
+        right: var(--spacing-md);
+        bottom: calc(var(--spacing-md) + 55px);
+        width: 40px;
+        height: 40px;
+    }
+    
+    .btn-music {
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+        width: 50px;
+        height: 50px;
+    }
+    
+    .btn-music::before {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+.vinyl-grooves {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: repeating-radial-gradient(
+        circle at center,
+        rgba(184, 134, 11, 0.1) 0px,
+        rgba(184, 134, 11, 0.05) 1px,
+        rgba(255, 255, 255, 0.3) 1px,
+        rgba(184, 134, 11, 0.05) 2px,
+        rgba(184, 134, 11, 0.1) 3px,
+        rgba(255, 255, 255, 0.2) 3px,
+        rgba(184, 134, 11, 0.05) 4px
+    );
+    z-index: 2;
+    opacity: 0.7;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
 }
