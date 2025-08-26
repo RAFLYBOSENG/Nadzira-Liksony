@@ -1,10 +1,22 @@
-from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///wedding.db'
+app.secret_key = 'your-secret-key-here'
+
+# Kredensial admin
+ADMIN_CREDENTIALS = {
+    'Admin@admin.com': '$%12QwaszX#!!'
+}
+
+# Pastikan folder instance ada untuk menyimpan SQLite DB
+os.makedirs(app.instance_path, exist_ok=True)
+
+# Gunakan path absolut di dalam folder instance
+db_path = os.path.join(app.instance_path, 'wedding.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -46,6 +58,35 @@ class HealthScreening(db.Model):
 def home():
     return render_template('index.html')
 
+# Route Dashboard (dengan proteksi login)
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+# Route untuk login admin
+@app.route('/admin/login', methods=['POST'])
+def admin_login():
+    data = request.get_json() or {}
+    email = data.get('email')
+    password = data.get('password')
+    if email in ADMIN_CREDENTIALS and ADMIN_CREDENTIALS[email] == password:
+        session['admin_logged_in'] = True
+        session['admin_email'] = email
+        return jsonify({'status': 'success'})
+    return jsonify({'status': 'error', 'message': 'Email atau password salah'}), 401
+
+@app.route('/admin/logout')
+def admin_logout():
+    session.clear()
+    return jsonify({'status': 'success'})
+
+@app.route('/admin/status')
+def admin_status():
+    return jsonify({
+        'logged_in': bool(session.get('admin_logged_in')),
+        'email': session.get('admin_email')
+    }), (200 if session.get('admin_logged_in') else 401)
+
 # Route untuk RSVP
 @app.route('/rsvp', methods=['POST'])
 def rsvp():
@@ -79,6 +120,29 @@ def like_comment(id):
     comment.likes += 1
     db.session.commit()
     return jsonify({'status': 'success', 'likes': comment.likes})
+
+# Route untuk Edit Ucapan (Admin only)
+@app.route('/comment/<int:id>/edit', methods=['PUT'])
+def edit_comment(id):
+    if not session.get('admin_logged_in'):
+        return jsonify({'status': 'error', 'message': 'Unauthorized'}), 401
+    
+    data = request.get_json()
+    comment = Comment.query.get_or_404(id)
+    comment.message = data.get('message', comment.message)
+    db.session.commit()
+    return jsonify({'status': 'success'})
+
+# Route untuk Hapus Ucapan (Admin only)
+@app.route('/comment/<int:id>/delete', methods=['DELETE'])
+def delete_comment(id):
+    if not session.get('admin_logged_in'):
+        return jsonify({'status': 'error', 'message': 'Unauthorized'}), 401
+    
+    comment = Comment.query.get_or_404(id)
+    db.session.delete(comment)
+    db.session.commit()
+    return jsonify({'status': 'success'})
 
 # Route untuk Amplop Digital
 @app.route('/gift', methods=['POST'])
@@ -130,7 +194,9 @@ def comment_list():
         'created_at': comment.created_at.isoformat()
     } for comment in comments])
 
+# Inisialisasi DB saat import (berlaku untuk gunicorn dan dev server)
+with app.app_context():
+    db.create_all()
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)

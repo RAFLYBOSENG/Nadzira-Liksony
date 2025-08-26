@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollEffects();
     initDecorations();
     setupParallax();
+    initCountdown();
     
     // Toggle untuk musik
     const btnMusic = document.querySelector('.btn-music');
@@ -163,6 +164,55 @@ function setupParallax() {
             });
         });
     }
+}
+
+// Countdown Waktu (WIB -> Target WIB)
+function initCountdown() {
+    const root = document.getElementById('count-down');
+    if (!root) return;
+
+    const targetStr = root.getAttribute('data-time');
+    if (!targetStr) return;
+
+    // Parse "YYYY-MM-DD HH:mm:ss" sebagai waktu WIB (+07:00)
+    const parts = targetStr.match(/(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2}):(\d{2})/);
+    if (!parts) return;
+
+    const year = parseInt(parts[1], 10);
+    const month = parseInt(parts[2], 10) - 1; // 0-11
+    const day = parseInt(parts[3], 10);
+    const hour = parseInt(parts[4], 10);
+    const minute = parseInt(parts[5], 10);
+    const second = parseInt(parts[6], 10);
+
+    // Konversi waktu WIB ke UTC epoch (WIB = UTC+7)
+    const targetUtcMs = Date.UTC(year, month, day, hour - 7, minute, second, 0);
+
+    const elDay = document.getElementById('day');
+    const elHour = document.getElementById('hour');
+    const elMinute = document.getElementById('minute');
+    const elSecond = document.getElementById('second');
+
+    if (!elDay || !elHour || !elMinute || !elSecond) return;
+
+    const update = () => {
+        const nowUtcMs = Date.now();
+        let diff = Math.max(0, targetUtcMs - nowUtcMs);
+
+        const totalSeconds = Math.floor(diff / 1000);
+        const days = Math.floor(totalSeconds / (24 * 3600));
+        const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        elDay.textContent = String(days);
+        elHour.textContent = String(hours);
+        elMinute.textContent = String(minutes);
+        elSecond.textContent = String(seconds);
+    };
+
+    update();
+    setInterval(update, 1000);
 }
 
 // Toggle Music

@@ -7,7 +7,7 @@
     <title>Nadzira & Liksony</title>
 
     <!-- SEO Tag -->
-    <meta name="author" content="dewanakl" />
+    <meta name="author" content="RaflyBoseng" />
     <meta name="language" content="id" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="googlebot" content="index, follow, max-image-preview:large" />
@@ -34,13 +34,13 @@
     />
     <meta
       property="og:image"
-      content="{{ url_for('static', filename='assets/images/bg.png') }}"
+      content="{{ url_for('static', filename='assets/images/bg.webp') }}"
     />
     <meta
       property="og:image:secure_url"
-      content="{{ url_for('static', filename='assets/images/bg.png') }}"
+      content="{{ url_for('static', filename='assets/images/profil.webp') }}"
     />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/webp" />
     <meta
       property="og:image:alt"
       content="Website Undangan Pernikahan Nadzira & Liksony Secara Online"
@@ -241,28 +241,28 @@
         id="home"
         class="p-0 m-0"
         style="
-          background-image: url('{{ url_for('static', filename='assets/images/bg.png') }}');
+          background-image: url('{{ url_for('static', filename='assets/images/bg.webp') }}');
           background-size: cover;
           background-position: center;
         "
       >
         <div class="text-center pt-4 pb-0 px-0 m-0 bg-cover-black">
-          <h1 class="font-esthetic my-4 fw-medium" style="font-size: 2.5rem">
-            Undangan Pernikahan
+          <h1 class="font-esthetic my-4 fw-bold" style="font-size: 2.5rem">
+            <b>Undangan Pernikahan</b>
           </h1>
 
           <div class="py-4">
             <div class="img-crop border border-3 border-light shadow mx-auto">
               <img
-                src="{{ url_for('static', filename='assets/images/bg.png') }}"
-                alt="bg"
+                src="{{ url_for('static', filename='assets/images/profil.webp') }}"
+                alt="profil"
                 onclick="util.modal(this)"
               />
             </div>
           </div>
 
-          <h2 class="font-esthetic my-4" style="font-size: 3rem">
-            Nadzira Nurzakiyah, S.Pd &amp; Liksony Sanjaya
+          <h2 class="font-esthetic my-4 fw-bold" style="font-size: 3rem">
+            <b>Nadzira Nurzakiyah, S.Pd &amp; Liksony Sanjaya</b>
           </h2>
           <p class="mb-0" style="font-size: 1.5rem">Sabtu, 6 September 2025</p>
 
@@ -359,7 +359,7 @@
                 class="img-crop border border-3 border-light shadow my-4 mx-auto"
               >
                 <img
-                  src="{{ url_for('static', filename='assets/images/cowo.png') }}"
+                  src="{{ url_for('static', filename='assets/images/cowo.webp') }}"
                   alt="cowo"
                   onclick="util.modal(this)"
                 />
@@ -416,7 +416,7 @@
                 class="img-crop border border-3 border-light shadow my-4 mx-auto"
               >
                 <img
-                  src="{{ url_for('static', filename='assets/images/cewe.png') }}"
+                  src="{{ url_for('static', filename='assets/images/cewe.webp') }}"
                   alt="cewe"
                   onclick="util.modal(this)"
                   onerror="this.src='{{ url_for('static', filename='assets/images/bg.png') }}'"
@@ -531,23 +531,23 @@
               <!-- Ganti waktunya pada data-waktu (sesuai format tersebut) -->
               <div
                 class="row justify-content-center"
-                data-time="2025-08-17 00:00:00"
+                data-time="2025-09-06 11:00:00"
                 id="count-down"
               >
                 <div class="col-3 p-1">
-                  <h2 class="d-inline m-0 p-0" id="day">0</h2>
+                  <h2 class="d-inline m-0 p-0" id="day"></h2>
                   <small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
                 </div>
                 <div class="col-3 p-1">
-                  <h2 class="d-inline m-0 p-0" id="hour">0</h2>
+                  <h2 class="d-inline m-0 p-0" id="hour"></h2>
                   <small class="ms-1 me-0 my-0 p-0 d-inline">Jam</small>
                 </div>
                 <div class="col-3 p-1">
-                  <h2 class="d-inline m-0 p-0" id="minute">0</h2>
+                  <h2 class="d-inline m-0 p-0" id="minute"></h2>
                   <small class="ms-1 me-0 my-0 p-0 d-inline">Menit</small>
                 </div>
                 <div class="col-3 p-1">
-                  <h2 class="d-inline m-0 p-0" id="second">0</h2>
+                  <h2 class="d-inline m-0 p-0" id="second"></h2>
                   <small class="ms-1 me-0 my-0 p-0 d-inline">Detik</small>
                 </div>
               </div>
@@ -580,7 +580,7 @@
             <div class="overflow-x-hidden">
               <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
                 <h2 class="font-esthetic" style="font-size: 2rem">Akad</h2>
-                <p>Pukul 08.00 WIB - 10.00 WIB</p>
+                <p>Pukul 08.00 WIB - 11.00 WIB</p>
               </div>
 
               <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
@@ -591,15 +591,13 @@
 
             <div class="py-2" data-aos="fade-up" data-aos-duration="1500">
               <a
-                href="https://goo.gl/maps/ALZR6FJZU3kxVwN86"
+                href="https://maps.app.goo.gl/He3PJQhDwznYPvN99"
                 target="_blank"
                 class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3"
-                ><i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google
-                Maps</a
+                ><i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps</a
               >
               <p class="mb-0 mt-1 mx-1 pb-4" style="font-size: 0.9rem">
-                Jl. Raya Pacet No.188, Pakutandang, Kec. Ciparay, Kabupaten
-                Bandung, Jawa Barat 40381
+                kampung Rancabogo Rt02 Rw07 Des. Sagaracipta Kec. Ciparay Kab. Bandung POS 40381
               </p>
             </div>
           </div>
@@ -625,6 +623,7 @@
         </div>
       </div>
 
+      
       <!-- Gallery -->
       <section class="dark-section bg-black" id="gallery">
         <div class="container pb-5 pt-4">
@@ -646,52 +645,165 @@
               data-bs-ride="carousel"
             >
               <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carousel-image-one"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carousel-image-one"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carousel-image-one"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="13" aria-label="Slide 14"></button>
               </div>
 
               <div class="carousel-inner rounded-4">
                 <div class="carousel-item active">
-                  <img
-                    src="https://picsum.photos/1280/720?random=1"
-                    alt="image 1"
-                    class="d-block w-100"
-                    onclick="util.modal(this)"
-                  />
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (1).webp') }}"
+                      alt="image 1"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
                 </div>
                 <div class="carousel-item">
-                  <img
-                    src="https://picsum.photos/1280/720?random=2"
-                    alt="image 2"
-                    class="d-block w-100"
-                    onclick="util.modal(this)"
-                  />
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (2).webp') }}"
+                      alt="image 2"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
                 </div>
                 <div class="carousel-item">
-                  <img
-                    src="https://picsum.photos/1280/720?random=3"
-                    alt="image 3"
-                    class="d-block w-100"
-                    onclick="util.modal(this)"
-                  />
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (3).webp') }}"
+                      alt="image 3"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (4).webp') }}"
+                      alt="image 4"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (5).webp') }}"
+                      alt="image 5"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (6).webp') }}"
+                      alt="image 6"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (7).webp') }}"
+                      alt="image 7"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (8).webp') }}"
+                      alt="image 8"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (19).webp') }}"
+                      alt="image 19"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (20).webp') }}"
+                      alt="image 20"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (21).webp') }}"
+                      alt="image 21"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (22).webp') }}"
+                      alt="image 22"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (23).webp') }}"
+                      alt="image 23"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -705,7 +817,7 @@
                   class="carousel-control-prev-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Sebelumnya</span>
               </button>
 
               <button
@@ -718,7 +830,7 @@
                   class="carousel-control-next-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">Berikutnya</span>
               </button>
             </div>
 
@@ -730,52 +842,143 @@
               data-bs-ride="carousel"
             >
               <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carousel-image-two"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carousel-image-two"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carousel-image-two"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="13" aria-label="Slide 14"></button>
               </div>
 
               <div class="carousel-inner rounded-4">
                 <div class="carousel-item active">
-                  <img
-                    src="https://picsum.photos/1280/720?random=4"
-                    alt="image 4"
-                    class="d-block w-100"
-                    onclick="util.modal(this)"
-                  />
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (9).webp') }}"
+                      alt="image 9"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
                 </div>
                 <div class="carousel-item">
-                  <img
-                    src="https://picsum.photos/1280/720?random=5"
-                    alt="image 5"
-                    class="d-block w-100"
-                    onclick="util.modal(this)"
-                  />
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (10).webp') }}"
+                      alt="image 10"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
                 </div>
                 <div class="carousel-item">
-                  <img
-                    src="https://picsum.photos/1280/720?random=6"
-                    alt="image 6"
-                    class="d-block w-100"
-                    onclick="util.modal(this)"
-                  />
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (11).webp') }}"
+                      alt="image 11"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (12).webp') }}"
+                      alt="image 12"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (13).webp') }}"
+                      alt="image 13"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (14).webp') }}"
+                      alt="image 14"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (15).webp') }}"
+                      alt="image 15"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (16).webp') }}"
+                      alt="image 16"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (17).webp') }}"
+                      alt="image 17"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (18).webp') }}"
+                      alt="image 18"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      src="{{ url_for('static', filename='assets/images/galeri (19).webp') }}"
+                      alt="image 19"
+                      class="d-block"
+                      style="width: 350px; height: 500px; object-fit: cover; object-position: center; margin: 0 auto;"
+                      onclick="util.modal(this)"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -789,7 +992,7 @@
                   class="carousel-control-prev-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Sebelumnya</span>
               </button>
 
               <button
@@ -802,8 +1005,47 @@
                   class="carousel-control-next-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">Berikutnya</span>
               </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Section -->
+      <section class="dark-section bg-black" id="video-section">
+        <div class="container pb-5 pt-4">
+          <div class="card-body border rounded-5 shadow p-3">
+            <h2
+              class="font-esthetic text-center py-3"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+              style="font-size: 2rem"
+            >
+              Video Kenangan
+            </h2>
+            
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              class="text-center"
+            >
+              <video
+                class="rounded-4 shadow"
+                style="max-width: 100%; height: auto; max-height: 500px;"
+                controls
+                preload="metadata"
+                id="wedding-video"
+                poster="{{ url_for('static', filename='assets/images/bg.webp') }}"
+              >
+                <source src="{{ url_for('static', filename='assets/images/galeri (1).mp4') }}" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+              </video>
+              
+              <p class="mt-3 mb-0" style="font-size: 0.9rem; color: #ccc;">
+                <i class="fas fa-play-circle me-2"></i>
+                Klik tombol play untuk menonton video kenangan kami
+              </p>
             </div>
           </div>
         </div>
@@ -843,22 +1085,22 @@
                   data-aos-duration="1500"
                 >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/640px-BNI_logo.svg.png"
+                    src="{{ url_for('static', filename='assets/images/Bank_BJB_logo.webp') }}"
                     class="img-fluid w-50 rounded"
-                    alt="bni"
+                    alt="bjb"
                   />
 
                   <p class="card-text mt-3 mb-0" style="font-size: 0.9rem">
-                    No. Rekening 123456789
+                    No. Rekening 0121504367100
                   </p>
                   <p class="card-text" style="font-size: 0.9rem">
-                    a.n Lorem ipsum dolor
+                    Nadzira Nurzakiyah
                   </p>
 
                   <!-- Ubah juga data-copy sesuai dengan no rekening -->
                   <button
                     class="btn btn-outline-dark btn-sm rounded-4"
-                    data-copy="123456789"
+                    data-copy="0121504367100"
                     onclick="util.copy(this, 'Tersalin')"
                   >
                     Salin No. Rekening
@@ -871,22 +1113,23 @@
                   data-aos-duration="1500"
                 >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/640px-BANK_BRI_logo.svg.png"
+                    src="{{ url_for('static', filename='assets/images/Bank_Syariah_Indonesia.webp') }}"
                     class="img-fluid w-50 rounded"
-                    alt="bri"
+                    alt="bsi"
                   />
 
                   <p class="card-text mt-3 mb-0" style="font-size: 0.9rem">
-                    No. Rekening 123456789
+                    No. Rekening 7265264926
+
                   </p>
                   <p class="card-text" style="font-size: 0.9rem">
-                    a.n Lorem ipsum dolor
+                    Iping Fathurohman
                   </p>
 
                   <!-- Ubah juga data-copy sesuai dengan no rekening -->
                   <button
                     class="btn btn-outline-dark btn-sm rounded-4"
-                    data-copy="123456789"
+                    data-copy="7265264926"
                     onclick="util.copy(this, 'Tersalin')"
                   >
                     Salin No. Rekening
@@ -1212,11 +1455,135 @@
         if (!audio) initMusic();
         if (audio.paused) {
           audio.play();
-          document.querySelector('#button-music i').classList.add('spin-button');
+          const icon = document.querySelector('#button-music i');
+          if (icon) icon.classList.add('spin-button');
         } else {
           audio.pause();
-          document.querySelector('#button-music i').classList.remove('spin-button');
+          const icon = document.querySelector('#button-music i');
+          if (icon) icon.classList.remove('spin-button');
         }
+      };
+
+      // Pause audio otomatis saat video diputar
+      const hookVideoAudio = () => {
+        const video = document.getElementById('wedding-video');
+        if (!video) return;
+        video.addEventListener('play', () => {
+          if (audio && !audio.paused) {
+            audio.pause();
+          }
+        });
+      };
+
+      // Utility: salin nomor rekening dari tombol dengan attribute data-copy
+      window.util = window.util || {};
+      window.util.copy = async (btn, successText = 'Tersalin') => {
+        try {
+          const text = btn.getAttribute('data-copy') || '';
+          if (!text) return;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = text; document.body.appendChild(ta); ta.select();
+            document.execCommand('copy'); document.body.removeChild(ta);
+          }
+          const original = btn.innerHTML;
+          btn.innerHTML = successText;
+          setTimeout(() => { btn.innerHTML = original; }, 1500);
+        } catch (e) { console.warn('Copy failed', e); }
+      };
+
+      // Komentar sederhana (POST/GET ke Flask)
+      const renderComments = (items) => {
+        const container = document.getElementById('comments');
+        if (!container) return;
+        container.innerHTML = (items || []).map(c => (
+          `<div class="card border rounded-4 shadow-sm mb-2 p-3">
+            <div class="d-flex justify-content-between">
+              <strong>${(c.name || 'Tamu').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</strong>
+              <small class="text-muted">${(c.created_at || '').toString().slice(0,19).replace('T',' ')}</small>
+            </div>
+            <div>${(c.message || '').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+            <div class="mt-1"><small>❤️ ${c.likes || 0}</small></div>
+          </div>`
+        )).join('');
+      };
+
+      const loadComments = async () => {
+        try {
+          const res = await fetch('/comment/list');
+          if (!res.ok) return;
+          const data = await res.json();
+          renderComments(data);
+        } catch (e) { console.warn(e); }
+      };
+
+      const sendComment = async (button) => {
+        const name = document.getElementById('form-name')?.value?.trim() || 'Tamu Undangan';
+        const message = document.getElementById('form-comment')?.value?.trim() || '';
+        if (!message) { alert('Silakan tulis ucapan & doa.'); return; }
+        button.disabled = true;
+        try {
+          const res = await fetch('/comment', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, message })
+          });
+          if (res.ok) {
+            document.getElementById('form-comment').value = '';
+            await loadComments();
+          }
+        } catch (e) { console.warn(e); }
+        button.disabled = false;
+      };
+      // Ekspos agar onclick="comment.send(this)" tetap jalan
+      window.comment = { send: sendComment };
+
+      // Countdown berbasis WIB (UTC+7)
+      const initCountdownWIB = () => {
+        const root = document.getElementById('count-down');
+        if (!root) return;
+
+        const targetStr = root.getAttribute('data-time');
+        if (!targetStr) return;
+
+        const parts = targetStr.match(/(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2}):(\d{2})/);
+        if (!parts) return;
+
+        const year = parseInt(parts[1], 10);
+        const month = parseInt(parts[2], 10) - 1; // 0-11
+        const day = parseInt(parts[3], 10);
+        const hour = parseInt(parts[4], 10);
+        const minute = parseInt(parts[5], 10);
+        const second = parseInt(parts[6], 10);
+
+        // WIB = UTC+7
+        const targetUtcMs = Date.UTC(year, month, day, hour - 7, minute, second, 0);
+
+        const elDay = document.getElementById('day');
+        const elHour = document.getElementById('hour');
+        const elMinute = document.getElementById('minute');
+        const elSecond = document.getElementById('second');
+        if (!elDay || !elHour || !elMinute || !elSecond) return;
+
+        const update = () => {
+          const nowUtcMs = Date.now();
+          let diff = Math.max(0, targetUtcMs - nowUtcMs);
+
+          const totalSeconds = Math.floor(diff / 1000);
+          const days = Math.floor(totalSeconds / (24 * 3600));
+          const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+          const minutes = Math.floor((totalSeconds % 3600) / 60);
+          const seconds = totalSeconds % 60;
+
+          elDay.textContent = String(days);
+          elHour.textContent = String(hours);
+          elMinute.textContent = String(minutes);
+          elSecond.textContent = String(seconds);
+        };
+
+        update();
+        setInterval(update, 1000);
       };
 
       // Event listener saat DOM sudah dimuat
@@ -1229,6 +1596,13 @@
 
         // Inisialisasi musik
         initMusic();
+        // Inisialisasi countdown WIB
+        initCountdownWIB();
+        
+        // Hook video agar mem-pause musik saat play
+        hookVideoAudio();
+        // Muat komentar awal
+        loadComments();
         
         // Set nama tamu
         const urlParams = new URLSearchParams(window.location.search);
